@@ -49,5 +49,10 @@ int main(int argc, char **argv)
     box(stdscr,'|','-');
     move(LINES/2, COLS/2);
     waddstr(stdscr, "Hello, world!");
+    refresh();
+    getchar();
     attron(A_REVERSE);
+    refresh();
+    getchar();
+    endwin();
 }

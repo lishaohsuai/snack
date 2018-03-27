@@ -1,4 +1,4 @@
-LOCAL_LIBRARY +=  -L./lib -lcurses -std=c++11
+LOCAL_LIBRARY +=  -L./lib -lcurses -std=c++11 
 LOCAL_LDFLAGS +=  -lpthread -ldl
 LOCAL_CFLAGS += -I./include -g
 
