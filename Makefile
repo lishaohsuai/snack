@@ -1,12 +1,12 @@
 LOCAL_LIBRARY +=  -L./lib -lcurses -std=c++11
 LOCAL_LDFLAGS +=  -lpthread -ldl
-LOCAL_CFLAGS += -I./include
+LOCAL_CFLAGS += -I./include -g
 
 CC=g++
 
 TARGETS1 = Even_Snack
-SRCS1 = ./src/main.cc ./src/jsoncpp.cpp
-OBJS1 = $(patsubst %.c, %.o, $(SRCS1))
+SRCS1 = ./src/main.cc ./src/jsoncpp.cc ./src/windows/windows.cc ./src/snack/snack.cc
+OBJS1 = $(patsubst %.cc, %.o, $(SRCS1))
 
 TARGETS2 = ./test/
 
@@ -23,11 +23,11 @@ all: $(TARGETS1) $(TARGETS2)
 $(TARGETS1):$(OBJS1)
 	$(CC)  -o $@ $^  $(LDFLAGS) $(CFLAGS)
 
-$(OBJS1): %.o:%.c
+$(OBJS1): %.o:%.cc
 	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean :
-	@rm -rf $(TARGETS1) $(OBJS1) $(TARGETS2) $(OBJS2)
+	rm  $(TARGETS1) $(OBJS1)
 
 #.SUFFIXES:
 .PHONY : all clean

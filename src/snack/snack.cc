@@ -3,8 +3,8 @@
 Snack::Snack():
     length(3),
     speed(1),
-    direction(SNACK_WEST),
-    alive(True)
+    direction(SNACK_LEFT),
+    alive(true)
 {}
 
 Snack::~Snack()

@@ -3,8 +3,10 @@
 
 #include <iostream>
 
-typedef enum DIRECTION
-{ SNACK_UP,SNACK_DOWN,SNACK_LEFT,SNACK_RIGHT };
+typedef enum
+{ SNACK_UP,SNACK_DOWN,SNACK_LEFT,SNACK_RIGHT }
+DIRECTION
+;
 
 class Snack
 {
@@ -17,7 +19,7 @@ private:
     int speed;
     int direction;
     bool alive;
-}
+};
 
 #endif
 
